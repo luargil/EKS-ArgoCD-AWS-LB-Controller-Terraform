@@ -1,22 +1,22 @@
 env                   = "dev"
-aws-region            = "us-east-2"
+aws-region            = "eu-central-1"
 vpc-cidr-block        = "10.16.0.0/16"
-vpc-name              = "vpc"
-igw-name              = "igw"
+vpc-name              = "testing-vpc"
+igw-name              = "testing-igw"
 pub-subnet-count      = 3
 pub-cidr-block        = ["10.16.0.0/20", "10.16.16.0/20", "10.16.32.0/20"]
-pub-availability-zone = ["us-east-2a", "us-east-2b", "us-east-2c"]
-pub-sub-name          = "subnet-public"
+pub-availability-zone = ["eu-central-1a", "eu-central-1b", "eu-central-1c"]
+pub-sub-name          = "testing-subnet-public"
 pri-subnet-count      = 3
 pri-cidr-block        = ["10.16.128.0/20", "10.16.144.0/20", "10.16.160.0/20"]
-pri-availability-zone = ["us-east-2a", "us-east-2b", "us-east-2c"]
-pri-sub-name          = "subnet-private"
-public-rt-name        = "public-route-table"
-private-rt-name       = "private-route-table"
-eip-name              = "elasticip-ngw"
-ngw-name              = "ngw"
-eks-sg                = "eks-sg"
-ec2-sg                = "ec2-sg"
+pri-availability-zone = ["eu-central-1a", "eu-central-1b", "eu-central-1c"]
+pri-sub-name          = "testing-subnet-private"
+public-rt-name        = "testing-public-route-table"
+private-rt-name       = "testing-private-route-table"
+eip-name              = "testing-elasticip-ngw"
+ngw-name              = "testing-ngw"
+eks-sg                = "testing-eks-sg"
+ec2-sg                = "testing-ec2-sg"
 
 # EKS
 is-eks-cluster-enabled     = true
@@ -52,10 +52,10 @@ addons = [
   # Add more addons as needed
 ]
 
-# IAM 
+# IAM
 ec2-iam-role             = "ec2-ssm-role"
 ec2-iam-role-policy      = "ec2-ssm-role-policy"
 ec2-iam-instance-profile = "ec2-ssm-instance-profile"
 
 # EC2
-ec2-name = "eks-deploy-server"
+ec2-name = "testing-eks-deploy-server"
