@@ -9,6 +9,8 @@
 
 Welcome to the Terraform project repository for setting up a fully functional, private AWS EKS cluster integrated with essential tools like ArgoCD, Prometheus, and Grafana. This repository provides everything you need to deploy and manage a secure and scalable Kubernetes environment on AWS.
 
+- **https://towardsdev.com/configure-argocd-prometheus-grafana-aws-load-balancer-controller-on-eks-cluster-using-terraform-831d46068b1b**
+
 ## 🌟 Overview
 
 This project automates the provisioning of a private EKS cluster on AWS, along with the deployment of key Kubernetes management and monitoring tools using Terraform and Helm. The infrastructure is designed to be robust, allowing you to easily manage, scale, and monitor your Kubernetes resources.
