@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: efs-access-pod
+spec:
+  containers:
+  - name: efs-access-container
+    image: busybox
+    command: [ "sleep", "3600" ] # Mantener el pod activo
+    volumeMounts:
+    - name: nginx-storage
+      mountPath: /mnt/efs
+  volumes:
+  - name: nginx-storage
+    persistentVolumeClaim:
+      claimName: nginx-pvc

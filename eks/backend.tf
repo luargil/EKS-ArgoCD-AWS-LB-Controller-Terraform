@@ -1,5 +1,5 @@
 terraform {
-  required_version = "~> 1.9.5"
+  required_version = "~> 1.3"
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -9,22 +9,32 @@ terraform {
       source  = "hashicorp/kubernetes"
       version = "2.31.0"
     }
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.0"
+    }
     helm = {
       source  = "hashicorp/helm"
       version = "~> 2.10.0"
     }
   }
   backend "s3" {
-    bucket         = "my-ews-baket1"
-    region         = "us-east-1"
-    key            = "eks/terraform.tfstate"
-    dynamodb_table = "Lock-Files"
-    encrypt        = true
+    bucket            = "kiuwan-terraform-state"
+    key               = "eks2-cluster-test/terraform.tfstate"
+    region            = "eu-west-1"
   }
 }
 
 provider "aws" {
   region = var.aws-region
+
+  default_tags {
+    tags = {
+      Project     = "Talos Kubernetes Cluster"
+      Provisioner = "Terraform"
+      Environment = "Testing"
+    }
+  }
 }
 
 provider "kubernetes" {

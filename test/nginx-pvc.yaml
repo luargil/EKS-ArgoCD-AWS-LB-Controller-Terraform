@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nginx-pvc
+spec:
+  storageClassName: nginx-sc
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 5Gi # Tamaño solicitado (debe coincidir con el PV)
+  volumeName: nginx-pv # Referencia al PV creado anteriormente
