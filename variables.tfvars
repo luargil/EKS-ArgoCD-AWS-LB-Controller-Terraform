@@ -20,7 +20,7 @@ ec2-sg                = "testing-ec2-sg"
 
 # EKS
 is-eks-cluster-enabled     = true
-cluster-version            = "1.29"
+cluster-version            = "1.32"
 cluster-name               = "eks-cluster"
 endpoint-private-access    = true
 endpoint-public-access     = false
@@ -35,19 +35,19 @@ max_capacity_spot          = "10"
 addons = [
   {
     name    = "vpc-cni",
-    version = "v1.18.1-eksbuild.1"
+    version = "v1.19.2-eksbuild.1"
   },
   {
     name    = "coredns"
-    version = "v1.11.1-eksbuild.9"
+    version = "v1.11.4-eksbuild.2"
   },
   {
     name    = "kube-proxy"
-    version = "v1.29.3-eksbuild.2"
+    version = "v1.32.0-eksbuild.2"
   },
   {
     name    = "aws-ebs-csi-driver"
-    version = "v1.30.0-eksbuild.1"
+    version = "v1.40.0-eksbuild.1"
   }
   # Add more addons as needed
 ]
@@ -58,4 +58,4 @@ ec2-iam-role-policy      = "ec2-ssm-role-policy"
 ec2-iam-instance-profile = "ec2-ssm-instance-profile"
 
 # EC2
-ec2-name = "testing-eks-deploy-server"
+ec2-name = "testing-eks-bastion-server"
